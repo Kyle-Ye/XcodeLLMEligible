@@ -29,7 +29,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/blob/main/ove
 在脚本执行期间需要临时禁用一次 SIP。
 
 1. 在恢复模式下通过 `csrutil disable` 禁用 SIP 并重启。
-2. 在发布页面中下载 `eligibility_util` 并执行 `eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
+2. 在发布页面中下载 `eligibility_util` 并执行 `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
 3. 在恢复模式下通过 `csrutil enable` 恢复 SIP 并重启。
 
 > 如果你不熟悉 SIP 操作，请阅读 [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection)。

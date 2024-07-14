@@ -17,8 +17,10 @@ method_util() {
   echo "Downloading eligibility_util..."
   download_file "$UTIL_URL" "$UTIL_FILE"
   chmod +x "$UTIL_FILE"
-  echo "Running ./eligibility_util --help"
-  "$UTIL_FILE" --help
+  echo "Setting XcodeLLM to eligible..."
+  "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
+  echo "Setting Complete..."
+  echo "You can check the status by running $UTIL_FILE getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
 }
 
 method_override() {
@@ -73,6 +75,9 @@ case "$action" in
     else
       method_override
     fi
+    echo "XcodeLLM eligible override script completed."
+    echo "If you find this script helpful, please consider give a star to the project.
+    echo "🌟🌟🌟 https://github.com/Kyle-Ye/XcodeLLMEligible 🌟🌟🌟"
     ;;
   uninstall)
     uninstall
@@ -83,5 +88,3 @@ case "$action" in
     exit 1
     ;;
 esac
-
-echo "Script completed."

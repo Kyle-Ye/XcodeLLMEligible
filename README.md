@@ -29,7 +29,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/blob/main/ove
 Need one time SIP disable during the script.
 
 1. Disable SIP in recovery mode with `csrutil disable` and reboot.
-2. Download `eligibility_util` in the release page and execute `eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
+2. Download `eligibility_util` in the release page and execute `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
 3. Enable SIP in recovery mode with `csrutil enable` and reboot.
 
 > Read [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) if you are unfamiliar with SIP operation.
