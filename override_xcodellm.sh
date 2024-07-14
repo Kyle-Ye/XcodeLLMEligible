@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Constants
 UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/latest/eligibility_util"

@@ -8,11 +8,19 @@ For older methods which requires SIP disabled, please see Related links section.
 
 ## Notes
 
+this project is for learning and research purposes only.
+
+If you choose to use this project, you do so at your own risk and are responsible for compliance with any applicable laws.
+
+The author of this project is not responsible for any consequences that may arise from your use of this project.
+
 ## Usage
 
 ### Script Execution
 
-TODO
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/blob/main/override_xcodellm.sh | bash
+```
 
 ### Manual Execution
 

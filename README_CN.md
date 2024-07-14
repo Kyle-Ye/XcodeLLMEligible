@@ -8,11 +8,19 @@
 
 ## 注意事项
 
+这个项目仅用于学习和研究目的。
+
+如果您选择使用此项目，您将自行承担风险，并有责任遵守任何适用法律。
+
+本项目的作者对您使用本项目可能产生的任何后果概不负责。
+
 ## 使用方式
 
 ### 脚本执行
 
-TODO
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/blob/main/override_xcodellm.sh | bash
+```
 
 ### 手动执行
 
