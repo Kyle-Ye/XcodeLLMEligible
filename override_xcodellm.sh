@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Constants
-UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/latest/eligibility_util"
-OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/latest/eligibility_overrides.data"
+UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_util"
+OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_overrides.data"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
 OVERRIDES_FILE="${DOWNLOAD_DIR}/eligibility_overrides.data"
 DAEMON_CONTAINERS_DIR=~/Library/Daemon\ Containers/
 
-# Function to download files
 download_file() {
   local url="$1"
   local output_path="$2"
@@ -37,7 +35,6 @@ method_override() {
   done
 }
 
-# Function to check SIP status
 check_sip_status() {
   local sip_status=$(csrutil status)
   if echo "$sip_status" | grep -q "enabled"; then
@@ -63,7 +60,6 @@ uninstall() {
   done
 }
 
-# Main script logic
 action="install"
 if [[ $# -gt 0 ]]; then
   action="$1"
