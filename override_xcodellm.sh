@@ -1,7 +1,7 @@
 #!/bin/bash
 
-UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_util"
-OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_overrides.data"
+UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util"
+OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_overrides.data"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
 OVERRIDES_FILE="${DOWNLOAD_DIR}/eligibility_overrides.data"
