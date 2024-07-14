@@ -37,7 +37,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 在脚本执行期间需要临时禁用一次 SIP。
 
 1. 在恢复模式下通过 `csrutil disable` 禁用 SIP 并重启。
-2. 在发布页面中下载 `eligibility_util` 并执行 `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
+2. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_util` 并执行 `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
 3. 在恢复模式下通过 `csrutil enable` 恢复 SIP 并重启。
 
 > 如果你不熟悉 SIP 操作，请阅读 [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection)。
@@ -47,7 +47,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 
 完全不需要禁用 SIP。
 
-1. 从发布页面下载 `eligibility_overrides.data` 文件
+1. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_overrides.data` 文件
 2. 在`~/Library/Daemon Containers/<UUID>`下找到`eligibilityd`的正确容器路径
 3. 将下载的文件移动到相应的 Deamon 容器的 `Data/Library/Caches/NeverRestore/` 文件夹中。如果您不确定哪个是 eligibilityd 的容器目录，您可以一个一个地尝试，或者将下载的文件添加到所有 Deamon 容器中。
 
