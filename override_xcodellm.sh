@@ -20,21 +20,27 @@ method_util() {
   echo "Setting XcodeLLM to eligible..."
   "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
   echo "Setting Complete..."
-  echo "You can check the status by running $UTIL_FILE getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
+  echo "You can check the status by running $UTIL_FILE getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM"
 }
 
 method_override() {
   echo "Downloading eligibility_overrides.data..."
   download_file "$OVERRIDE_URL" "$OVERRIDES_FILE"
   echo "Copying eligibility_overrides.data to each Daemon Container..."
-  for dir in "$DAEMON_CONTAINERS_DIR"*/ ; do
-    if [[ -d "$dir" ]]; then
-      dest_dir="${dir}Data/Library/Caches/NeverRestore/"
-      mkdir -p "$dest_dir"
-      cp "$OVERRIDES_FILE" "$dest_dir"
-      echo "Copied to $dest_dir"
-    fi
-  done
+  if ls "$DAEMON_CONTAINERS_DIR"; then
+    for dir in "$DAEMON_CONTAINERS_DIR"*/ ; do
+      if [[ -d "$dir" ]]; then
+        dest_dir="${dir}Data/Library/Caches/NeverRestore/"
+        mkdir -p "$dest_dir"
+        cp "$OVERRIDES_FILE" "$dest_dir"
+        echo "Copied to $dest_dir"
+      fi
+    done
+  else
+    echo "You do not have the permission to read Daemon Container folder."
+    echo "Please considering granting full disk access in System Preferences > Security & Privacy > Full Disk Access to your Terminal app which the script is running on."
+    echo "Or you can follow the instruction on README.md to copy the files manually via Finder operation."
+  fi
 }
 
 check_sip_status() {
@@ -75,12 +81,13 @@ case "$action" in
     else
       method_override
     fi
-    echo "XcodeLLM eligible override script completed."
-    echo "If you find this script helpful, please consider give a star to the project.
+    echo "XcodeLLM eligible override script install completed."
+    echo "If you find this script helpful, please consider give a star to the project."
     echo "🌟🌟🌟 https://github.com/Kyle-Ye/XcodeLLMEligible 🌟🌟🌟"
     ;;
   uninstall)
     uninstall
+    echo "XcodeLLM eligible override script uninstall completed."
     ;;
   *)
     echo "Unknown action: $action"

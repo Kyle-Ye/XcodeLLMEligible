@@ -18,8 +18,16 @@
 
 ### 脚本执行
 
+#### 安装
+
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/blob/main/override_xcodellm.sh | bash
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
+```
+
+#### 卸载
+
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
 ```
 
 ### 手动执行

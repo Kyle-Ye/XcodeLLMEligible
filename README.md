@@ -18,8 +18,16 @@ The author of this project is not responsible for any consequences that may aris
 
 ### Script Execution
 
+#### Install
+
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/blob/main/override_xcodellm.sh | bash
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
+```
+
+#### Uninstall
+
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
 ```
 
 ### Manual Execution
