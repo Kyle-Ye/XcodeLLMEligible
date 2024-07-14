@@ -4,7 +4,9 @@
 
 Ways to enjoy Xcode LLM on ChinaSKU Mac without disabling SIP.
 
-For older methods which requires SIP disabled, please see Related links section.
+For older methods which requires SIP disabled, please see "Related links" section.
+
+![Screenshot](images/screenshot.png)
 
 ## Notes
 
@@ -15,6 +17,11 @@ If you choose to use this project, you do so at your own risk and are responsibl
 The author of this project is not responsible for any consequences that may arise from your use of this project.
 
 ## Usage
+
+> [!NOTE]
+> Tested the script under macOS 15 Beta 1 ~ Beta 3
+> 
+> Should work on macOS 15.x release as long as Apple does not remove or change the override feature of eligibility service.
 
 ### Script Execution
 

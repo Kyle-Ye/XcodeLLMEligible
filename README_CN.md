@@ -6,6 +6,8 @@
 
 对于需要禁用系统完整性保护 (SIP) 的旧方法，请参阅 "相关链接" 部分。
 
+![屏幕截图](images/screenshot.png)
+
 ## 注意事项
 
 这个项目仅用于学习和研究目的。
@@ -15,6 +17,11 @@
 本项目的作者对您使用本项目可能产生的任何后果概不负责。
 
 ## 使用方式
+
+> [!NOTE]
+> 仅在macOS 15 Beta 1 ~ Beta 3下测试了该脚本
+>
+> 只要苹果不删除或更改 eligibility 服务的 override 实现，预计可以在 macOS 15.x 的后续版本上工作
 
 ### 脚本执行
 
@@ -52,6 +59,8 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 3. 将下载的文件移动到相应的 Deamon 容器的 `Data/Library/Caches/NeverRestore/` 文件夹中。如果您不确定哪个是 eligibilityd 的容器目录，您可以一个一个地尝试，或者将下载的文件添加到所有 Deamon 容器中。
 
 ## 相关链接
+
+- https://github.com/Kyle-Ye/eligibility/
 
 - https://gist.github.com/Kyle-Ye/4ad1aa92df3a31bd812487af65e16947
 - https://gist.github.com/unixzii/6f25be1842399022e16ad6477a304286
