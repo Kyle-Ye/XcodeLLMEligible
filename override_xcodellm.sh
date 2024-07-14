@@ -15,18 +15,23 @@ download_file() {
 
 method_util() {
   echo "Downloading eligibility_util..."
+  echo ""
   download_file "$UTIL_URL" "$UTIL_FILE"
   chmod +x "$UTIL_FILE"
   echo "Setting XcodeLLM to eligible..."
   "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
   echo "Setting Complete..."
+  echo ""
   echo "You can check the status by running $UTIL_FILE getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM"
+  echo ""
 }
 
 method_override() {
   echo "Downloading eligibility_overrides.data..."
+  echo ""
   download_file "$OVERRIDE_URL" "$OVERRIDES_FILE"
   echo "Copying eligibility_overrides.data to each Daemon Container..."
+  echo ""
   if ls "$DAEMON_CONTAINERS_DIR"; then
     for dir in "$DAEMON_CONTAINERS_DIR"*/ ; do
       if [[ -d "$dir" ]]; then
@@ -40,6 +45,8 @@ method_override() {
     echo "You do not have the permission to read Daemon Container folder."
     echo "Please considering granting full disk access in System Preferences > Security & Privacy > Full Disk Access to your Terminal app which the script is running on."
     echo "Or you can follow the instruction on README.md to copy the files manually via Finder operation."
+    echo ""
+    exit 1
   fi
 }
 
@@ -47,9 +54,11 @@ check_sip_status() {
   local sip_status=$(csrutil status)
   if echo "$sip_status" | grep -q "enabled"; then
     echo "SIP is enabled."
+    echo ""
     return 1
   else
     echo "SIP is disabled."
+    echo ""
     return 0
   fi
 }
@@ -57,6 +66,7 @@ check_sip_status() {
 uninstall() {
   echo "Uninstalling..."
   echo "Removing eligibility_overrides.data from Daemon Containers..."
+  echo ""
   for dir in "$DAEMON_CONTAINERS_DIR"*/ ; do
     if [[ -d "$dir" ]]; then
       dest_file="${dir}Data/Library/Caches/NeverRestore/eligibility_overrides.data"
@@ -76,9 +86,12 @@ fi
 case "$action" in
   install)
     echo "Performing install action..."
+    echo ""
     if check_sip_status; then
       method_util
     else
+      echo "[Warning] SIP is enabled. Fallback to use not recommended override file method."
+      echo ""
       method_override
     fi
     echo "XcodeLLM eligible override script install completed."
