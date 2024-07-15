@@ -50,7 +50,10 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 5. 删除启动参数 `sudo nvram -d boot-args`
 
 > 如果你不熟悉 SIP 操作，请阅读 [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection)。
-
+>
+> 你只能在恢复模式或禁用 SIP 的普通模式下设置boot-args。
+>
+> 设置boot-args后，记得重新启动以使更改生效。
 
 #### 方案二
 

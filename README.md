@@ -50,6 +50,10 @@ Need one time SIP disable during the script.
 5. Remove boot argument by `sudo nvram -d boot-args`
 
 > Read [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) if you are unfamiliar with SIP operation.
+>
+> You can only set boot-args in recovery mode or normal mode with SIP disabled.
+>
+> After setting boot-args, remember to reboot to make the change take effect.
 
 #### Method 2
 

@@ -63,6 +63,17 @@ check_sip_status() {
   fi
 }
 
+amfi_check() {
+    local boot_args=$(sudo nvram boot-args 2>/dev/null)
+    if echo "$boot_args" | grep -q 'amfi_get_out_of_my_way=1'; then
+        echo "amfi_get_out_of_my_way=1 is present in boot-args."
+        return 0
+    else
+        echo "amfi_get_out_of_my_way=1 is not present in boot-args."
+        return 1
+    fi
+}
+
 uninstall() {
   echo "Uninstalling..."
   echo "Removing eligibility_overrides.data from Daemon Containers..."
@@ -88,9 +99,19 @@ case "$action" in
     echo "Performing install action..."
     echo ""
     if check_sip_status; then
-      method_util
+      if amfi_check; then
+        echo "🎉 SIP is disabled and amfi_get_out_of_my_way=1 is present in boot-args."
+        echo ""
+        method_util
+      else
+        echo "[Warning] SIP is disabled but amfi_get_out_of_my_way=1 is not present in boot-args."
+        echo "Fallback to use not recommended override file method."
+        echo ""
+        method_override
+      fi
     else
-      echo "[Warning] SIP is enabled. Fallback to use not recommended override file method."
+      echo "[Warning] SIP is enabled."
+      echo "Fallback to use not recommended override file method."
       echo ""
       method_override
     fi
