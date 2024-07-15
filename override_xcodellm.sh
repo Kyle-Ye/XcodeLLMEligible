@@ -1,9 +1,11 @@
 #!/bin/bash
 
 UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util"
+UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util_sip"
 OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_overrides.data"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
+UTIL_SIP_FILE="${DOWNLOAD_DIR}/eligibility_util_sip"
 OVERRIDES_FILE="${DOWNLOAD_DIR}/eligibility_overrides.data"
 DAEMON_CONTAINERS_DIR=~/Library/Daemon\ Containers/
 
@@ -22,7 +24,8 @@ method_util() {
   "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
   echo "Setting Complete..."
   echo ""
-  echo "You can check the status by running $UTIL_FILE getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM"
+  echo "Checking the status..."
+  "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
   echo ""
 }
 
@@ -41,6 +44,13 @@ method_override() {
         echo "Copied to $dest_dir"
       fi
     done
+    echo "Downloading eligibility_util_sip..."
+    echo ""
+    download_file "$UTIL_SIP_URL" "$UTIL_SIP_FILE"
+    chmod +x "$UTIL_SIP_FILE"
+    echo "Checking the status..."
+    "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
+    echo ""
   else
     echo "You do not have the permission to read Daemon Container folder."
     echo "Please considering granting full disk access in System Preferences > Security & Privacy > Full Disk Access to your Terminal app which the script is running on."
