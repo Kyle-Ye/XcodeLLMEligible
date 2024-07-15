@@ -1,0 +1,16 @@
+name: Method 1 Bug Report
+description: Report a bug if you have disabled SIP and set the boot parameters correctly.
+title: "[Method 1] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting an issue! Please check #1 to confirm if your issue has already been addressed.
+        If it hasn't, provide any additional information below.
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Information
+      description: Add any other context or information about the problem here.
+      placeholder: Provide additional details here...

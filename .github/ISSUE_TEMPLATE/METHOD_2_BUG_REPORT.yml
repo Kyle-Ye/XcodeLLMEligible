@@ -1,0 +1,30 @@
+name: Method 2 Bug Report
+description: Report a bug if you have not disabled SIP.
+title: "[Method 2] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting an issue! Please provide the following information:
+  - type: textarea
+    id: json_output
+    attributes:
+      label: JSON Output
+      description: Paste the JSON output of `eligibility_util_sip getDomainAnswer --all` here.
+      placeholder: Paste JSON output here...
+    validations:
+      required: true
+  - type: textarea
+    id: compressed_archive
+    attributes:
+      label: Upload Compressed Archive
+      description: Upload a compressed archive of the `/private/var/db/eligibilityd` and `/private/var/db/os_eligibility` folders.
+    validations:
+      required: true
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Information
+      description: Add any other context or information about the problem here.
+      placeholder: Provide additional details here...
