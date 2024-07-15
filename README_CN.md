@@ -43,9 +43,11 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 
 在脚本执行期间需要临时禁用一次 SIP。
 
-1. 在恢复模式下通过 `csrutil disable` 禁用 SIP 并重启。
-2. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_util` 并执行 `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
-3. 在恢复模式下通过 `csrutil enable` 恢复 SIP 并重启。
+1. 在恢复模式下通过 `csrutil disable` 禁用 SIP
+2. 添加启动参数 `sudo nvram boot-args="amfi_get_out_of_my_way=1"`并重启
+3. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_util` 并执行 `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
+4. 在恢复模式下通过 `csrutil enable` 恢复 SIP
+5. 删除启动参数 `sudo nvram -d boot-args`
 
 > 如果你不熟悉 SIP 操作，请阅读 [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection)。
 
