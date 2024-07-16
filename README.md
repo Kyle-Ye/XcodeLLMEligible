@@ -57,6 +57,11 @@ Need one time SIP disable during the script.
 
 #### Method 2
 
+> [!NOTE]
+> There is known issue for method 2. See #3 for more details.
+>
+> If this is not work for you, please try method 1.
+
 No SIP disabled needed in total.
 
 1. Download `eligibility_overrides.data` file from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)

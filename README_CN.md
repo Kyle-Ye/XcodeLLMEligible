@@ -57,6 +57,11 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 
 #### 方案二
 
+> [!NOTE]
+> 方案二存在已知问题。详见 #3。
+>
+> 如果此方案对你不起作用，请尝试方案一。
+
 完全不需要禁用 SIP。
 
 1. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_overrides.data` 文件
