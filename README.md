@@ -57,7 +57,10 @@ Need one time SIP disable during the script.
 
 > [!TIP]
 > Similarly if you'd like to try Apple Intelligence on unsupported location or device, you can use the following command:
+>
 > `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4`
+>
+> For technical detail, see [Kyle-Ye/eligibility#3](https://github.com/Kyle-Ye/eligibility/pull/3)
 
 #### Method 2
 

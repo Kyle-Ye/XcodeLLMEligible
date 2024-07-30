@@ -56,8 +56,11 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 > 设置boot-args后，记得重新启动以使更改生效。
 
 > [!TIP]
-> 同样地，如果您想在不受支持的位置或设备上尝试 Apple Intelligence，你可以使用以下命令：
+> 同样地，如果您想在不受支持的地区或设备上尝试 Apple Intelligence，你可以使用以下命令：
+>
 > `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4`
+>
+> 有关技术细节，请参阅 [Kyle-Ye/eligibility#3](https://github.com/Kyle-Ye/eligibility/pull/3)
 
 #### 方案二
 
