@@ -55,6 +55,10 @@ Need one time SIP disable during the script.
 >
 > After setting boot-args, remember to reboot to make the change take effect.
 
+> [!TIP]
+> Similarly if you'd like to try Apple Intelligence on unsupported location or device, you can use the following command:
+> `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4`
+
 #### Method 2
 
 > [!NOTE]
