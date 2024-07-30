@@ -22,10 +22,13 @@ method_util() {
   chmod +x "$UTIL_FILE"
   echo "Setting XcodeLLM to eligible..."
   "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
+  echo "Setting Greymatter (Apple Intelligence) to eligible"
+  "$UTIL_FILW" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4
   echo "Setting Complete..."
   echo ""
   echo "Checking the status..."
   "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
+  "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
   echo ""
 }
 
