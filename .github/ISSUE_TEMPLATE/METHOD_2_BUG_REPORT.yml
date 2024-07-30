@@ -1,7 +1,7 @@
 name: Method 2 Bug Report
 description: Report a bug if you have not disabled SIP.
 title: "[Method 2] "
-labels: [bug]
+labels: [bug, method2]
 body:
   - type: markdown
     attributes:

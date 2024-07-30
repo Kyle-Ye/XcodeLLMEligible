@@ -1,7 +1,7 @@
-name: Method 1 Bug Report
-description: Report a bug if you have disabled SIP and set the boot parameters correctly.
-title: "[Method 1] "
-labels: [bug, method1]
+name: Other Bug Report
+description: Other general issue of eligibility_util
+title: "[Other] "
+labels: [bug, other]
 body:
   - type: markdown
     attributes:
