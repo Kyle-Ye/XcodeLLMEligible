@@ -2,7 +2,7 @@
 
 # 国行 Mac 使用 Xcode LLM的方法
 
-在不禁用系统完整性保护 (SIP) 的情况下在国行 Mac 上使用 Xcode LLM 的方法。
+在不禁用系统完整性保护 (SIP) 的情况下在国行 Mac 上使用 Xcode LLM / Apple Intelligence 的方法。
 
 对于需要禁用系统完整性保护 (SIP) 的旧方法，请参阅 "相关链接" 部分。
 
@@ -27,11 +27,21 @@
 
 #### 安装
 
+XcodeLLM:
+
 ```shell
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
 ```
 
+Apple Intelligence:
+
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_apple_intelligence.sh | bash
+```
+
 #### 卸载
+
+XcodeLLM:
 
 ```shell
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall

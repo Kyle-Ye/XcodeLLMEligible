@@ -126,7 +126,7 @@ case "$action" in
       method_override
     fi
     echo "XcodeLLM eligible override script install completed."
-    echo "If you find this script helpful, please consider give a star to the project."
+    echo "If you find this script helpful, please consider giving a star to the project."
     echo "🌟🌟🌟 https://github.com/Kyle-Ye/XcodeLLMEligible 🌟🌟🌟"
     ;;
   uninstall)

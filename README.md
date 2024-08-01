@@ -2,7 +2,7 @@
 
 # Ways to enjoy Xcode LLM on ChinaSKU Mac
 
-Ways to enjoy Xcode LLM on ChinaSKU Mac without disabling SIP.
+Ways to enjoy Xcode LLM / Apple Intelligence on ChinaSKU Mac without disabling SIP.
 
 For older methods which requires SIP disabled, please see "Related links" section.
 
@@ -27,11 +27,21 @@ The author of this project is not responsible for any consequences that may aris
 
 #### Install
 
+XcodeLLM:
+
 ```shell
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
 ```
 
+Apple Intelligence:
+
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_apple_intelligence.sh | bash
+```
+
 #### Uninstall
+
+XcodeLLM:
 
 ```shell
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
@@ -65,7 +75,7 @@ Need one time SIP disable during the script.
 #### Method 2
 
 > [!NOTE]
-> There is known issue for method 2. See #3 for more details.
+> There is known issue for method 2. See [#3](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/3) for more details.
 >
 > If this is not work for you, please try method 1.
 
@@ -76,6 +86,8 @@ No SIP disabled needed in total.
 3. Move the downloaded file to `eligibilityd`'s daemon container's `Data/Library/Caches/NeverRestore/` folder. If you are not sure which one is for `eligibilityd`, you can try it one by one or just add the file to all of the containers.
 
 ## Related links
+
+- https://github.com/Kyle-Ye/eligibility/
 
 - https://gist.github.com/Kyle-Ye/4ad1aa92df3a31bd812487af65e16947
 - https://gist.github.com/unixzii/6f25be1842399022e16ad6477a304286
