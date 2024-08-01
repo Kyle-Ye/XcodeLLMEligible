@@ -6,7 +6,7 @@
 
 对于需要禁用系统完整性保护 (SIP) 的旧方法，请参阅 "相关链接" 部分。
 
-![屏幕截图](images/screenshot.png)
+![屏幕截图](images/XcodeLLM/screenshot.png)
 
 ## 注意事项
 
@@ -84,6 +84,52 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 1. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_overrides.data` 文件
 2. 在`~/Library/Daemon Containers/<UUID>`下找到`eligibilityd`的正确容器路径
 3. 将下载的文件移动到相应的 Deamon 容器的 `Data/Library/Caches/NeverRestore/` 文件夹中。如果您不确定哪个是 eligibilityd 的容器目录，您可以一个一个地尝试，或者将下载的文件添加到所有 Deamon 容器中。
+
+## 故障排除
+
+> [!TIP]
+> eligibility_util 和 eligibility_util_sip 的区别在于，后者可以用于开启了SIP的环境（仅部分功能可用）。
+
+### Xcode LLM
+
+确认覆盖生效并且你有正确的 Answer。
+```
+./eligibility_util_sip getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
+```
+
+### Apple Intelligence
+
+> [!IMPORTANT]
+> 建议：
+> 1. 登录美区 Apple ID
+> 2. 将地区设置为美国，并将英语设置为首选语音
+> 3. 将英语（美国）设置为 Siri 语言
+
+1. 确认覆盖生效并且你有正确的 Answer。
+
+```
+./eligibility_util_sip getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
+```
+
+2. 进入设置 App > "Apple Intelligence & Siri"，点击 "Join Apple Intelligence Waitlist" 按钮。
+
+![Step2](images/AppleIntelligence/Step2.png)
+
+3. 你将看到 "Joined Waitlist" 标签，然后耐心等待一段时间。 
+
+![Step3](images/AppleIntelligence/Step3.png)
+
+4. 你将看到 "Preparing" 标签，然后继续耐心等待一段时间。
+
+![Step4](images/AppleIntelligence/Step4.png)
+
+5. 你将收到 "Apple Intelligence is Here" 通知。
+
+![Step5](images/AppleIntelligence/Step5.png)
+
+6. 你现在可以打开 Apple Intelligence 并使用它。
+
+![Step6](images/AppleIntelligence/Step6.png)
 
 ## 相关链接
 

@@ -6,7 +6,7 @@ Ways to enjoy Xcode LLM / Apple Intelligence on ChinaSKU Mac without disabling S
 
 For older methods which requires SIP disabled, please see "Related links" section.
 
-![Screenshot](images/screenshot.png)
+![Screenshot](images/XcodeLLM/screenshot.png)
 
 ## Notes
 
@@ -84,6 +84,53 @@ No SIP disabled needed in total.
 1. Download `eligibility_overrides.data` file from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)
 2. Find the correct container path for `eligibilityd` under `~/Library/Daemon Containers/<UUID>`
 3. Move the downloaded file to `eligibilityd`'s daemon container's `Data/Library/Caches/NeverRestore/` folder. If you are not sure which one is for `eligibilityd`, you can try it one by one or just add the file to all of the containers.
+
+## Trouble Shooting
+
+> [!TIP]
+> The difference of eligibility_util and eligibility_util_sip is that the former is for SIP disabled environment and the latter is for SIP enabled environment.
+
+### Xcode LLM
+
+Confirom the override is working and you have the correct answer.
+
+```
+./eligibility_util_sip getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
+```
+
+### Apple Intelligence
+
+> [!IMPORTANT]
+> Suggestions:
+> 1. Log in with a US Apple ID
+> 2. Set Region to United States and English as the primary language
+> 3. Set English (United States) as your Siri language
+
+1. Confirom the override is working and you have the correct answer.
+
+```
+./eligibility_util_sip getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
+```
+
+2. Go to Setting.app and choose "Apple Intelligence & Siri", click "Join Apple Intelligence Waitlist" button.
+
+![Step2](images/AppleIntelligence/Step2.png)
+
+3. You'll see "Joined Waitlist" label and wait for a while.
+
+![Step3](images/AppleIntelligence/Step3.png)
+
+4. You'll see "Preparing" label and wait for a while.
+
+![Step4](images/AppleIntelligence/Step4.png)
+
+5. You'll receive "Apple Intelligence is Here" notification.
+
+![Step5](images/AppleIntelligence/Step5.png)
+
+6. You can now turn on Apple Intelligence to use it.
+
+![Step6](images/AppleIntelligence/Step6.png)
 
 ## Related links
 
