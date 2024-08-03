@@ -92,11 +92,15 @@ No SIP disabled needed in total.
 
 ### Xcode LLM
 
-Confirom the override is working and you have the correct answer.
+1. Confirom the override is working and you have the correct answer.
 
 ```
 ./eligibility_util_sip getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
 ```
+
+2. Reenable SIP and then open Xcode to download Model.
+
+See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
 ### Apple Intelligence
 

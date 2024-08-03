@@ -92,10 +92,14 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 
 ### Xcode LLM
 
-确认覆盖生效并且你有正确的 Answer。
+1. 确认覆盖生效并且你有正确的 Answer。
 ```
 ./eligibility_util_sip getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
 ```
+
+2. 重新启用 SIP，然后打开 Xcode 下载模型。
+
+See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
 ### Apple Intelligence
 
