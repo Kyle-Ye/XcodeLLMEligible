@@ -90,8 +90,8 @@ uninstall() {
   echo ""
   for dir in "$DAEMON_CONTAINERS_DIR"*/ ; do
     if [[ -d "$dir" ]]; then
-      dest_file="${dir}Data/Library/Caches/NeverRestore/eligibility_overrides.data"
-      if [[ -f "$dest_file" ]]; then
+      dest_file="${dir}Data/Library/Caches/NeverRestore"
+      if [[ -d "$dest_file" ]]; then
         rm -rf "$dest_file"
         echo "Removed $dest_file"
       fi
