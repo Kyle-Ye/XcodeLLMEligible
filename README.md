@@ -30,13 +30,13 @@ The author of this project is not responsible for any consequences that may aris
 XcodeLLM:
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.1/override_xcodellm.sh | bash
 ```
 
 Apple Intelligence:
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_apple_intelligence.sh | bash
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.1/override_apple_intelligence.sh | bash
 ```
 
 #### Uninstall
@@ -44,7 +44,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 XcodeLLM:
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.1/override_xcodellm.sh | bash -s -- uninstall
 ```
 
 ### Manual Execution

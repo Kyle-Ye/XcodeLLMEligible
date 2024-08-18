@@ -30,13 +30,13 @@
 XcodeLLM:
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.1/override_xcodellm.sh | bash
 ```
 
 Apple Intelligence:
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_apple_intelligence.sh | bash
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.1/override_apple_intelligence.sh | bash
 ```
 
 #### 卸载
@@ -44,7 +44,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 XcodeLLM:
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.1/override_xcodellm.sh | bash -s -- uninstall
 ```
 
 ### 手动执行

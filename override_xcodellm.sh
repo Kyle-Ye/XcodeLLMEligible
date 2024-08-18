@@ -1,8 +1,8 @@
 #!/bin/bash
 
-UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util"
-UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util_sip"
-OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_overrides.data"
+UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_util"
+UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_util_sip"
+OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_overrides.data"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
 UTIL_SIP_FILE="${DOWNLOAD_DIR}/eligibility_util_sip"

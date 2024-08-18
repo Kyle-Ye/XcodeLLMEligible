@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util"
+UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.1.0/eligibility_util"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
 
