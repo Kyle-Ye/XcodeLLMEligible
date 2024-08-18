@@ -196,6 +196,10 @@ See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 - https://gist.github.com/Kyle-Ye/4ad1aa92df3a31bd812487af65e16947
 - https://gist.github.com/unixzii/6f25be1842399022e16ad6477a304286
 
+## 星星历史
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Kyle-Ye/XcodeLLMEligible&type=Date)](https://star-history.com/#Kyle-Ye/XcodeLLMEligible&Date)
+
 ## 版权信息
 
 MIT。详见 LICENSE 文件。
