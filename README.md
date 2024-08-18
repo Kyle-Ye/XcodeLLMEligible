@@ -93,7 +93,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 >
 > After setting boot-args, remember to reboot to make the change take effect.
 
-> [!TIP]`
+> [!TIP]
 >
 > For more technical detail, see [Kyle-Ye/eligibility](https://github.com/Kyle-Ye/eligibility)
 
