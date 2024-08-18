@@ -1,10 +1,14 @@
 ## <div align="center"><b><a href="README.md">English</a> | <a href="README_CN.md">简体中文</a></b></div>
 
-# Ways to enjoy Xcode LLM on ChinaSKU Mac
+# Darwin Eligibility Override
 
-Ways to enjoy Xcode LLM / Apple Intelligence on ChinaSKU Mac without disabling SIP.
+This project aims to achieve permanent use of Xcode LLM/Apple Intelligence on any Mac
+without disabling System Integrity Protection (SIP) or only disabling it once.
 
-For older methods which requires SIP disabled, please see "Related links" section.
+> [!NOTE]
+> Xcode LLM is only supported on macOS 15.0 Beta and later.
+>
+> Apple Intelligence is only supported on macOS 15.1 Beta and later.
 
 ![Screenshot](images/XcodeLLM/screenshot.png)
 
@@ -19,43 +23,67 @@ The author of this project is not responsible for any consequences that may aris
 ## Usage
 
 > [!NOTE]
-> Tested the script under macOS 15 Beta 1 ~ Beta 3
+> Tested the script under macOS 15 Beta 1 ~ macOS 15.1 Beta 2
 > 
 > Should work on macOS 15.x release as long as Apple does not remove or change the override feature of eligibility service.
 
-### Script Execution
-
-#### Install
-
-XcodeLLM:
-
-```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
-```
-
-Apple Intelligence:
-
-```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_apple_intelligence.sh | bash
-```
-
-#### Uninstall
-
-XcodeLLM:
-
-```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
-```
-
-### Manual Execution
-
-#### Method 1 (Recommended)
+### Method 1: util tool (Recommended)
 
 Need one time SIP disable during the script.
 
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util greymatter 
+```
+
+### Method 2: override file
+
+No SIP disabled needed in total.
+
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override greymatter 
+```
+
+## Uninstall
+
+### Method 1: util tool
+
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util greymatter 
+```
+
+### Method 2: override file
+
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override greymatter 
+```
+
+## Manual Execution
+
+### Method 1: util tool (Recommended)
+
 1. Disable SIP in recovery mode with `csrutil disable`
 2. Add boot argument by `sudo nvram boot-args="amfi_get_out_of_my_way=1"` and reboot
-3. Download `eligibility_util` from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases) and execute `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
+3. Download `eligibility_util` from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases) and execute the following command
+
+```shell
+# For XcodeLLM:
+./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
+# For Apple Intelligence
+./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4
+```
+
 4. Enable SIP in recovery mode with `csrutil enable` and reboot.
 5. Remove boot argument by `sudo nvram -d boot-args`
 
@@ -65,32 +93,60 @@ Need one time SIP disable during the script.
 >
 > After setting boot-args, remember to reboot to make the change take effect.
 
-> [!TIP]
-> Similarly if you'd like to try Apple Intelligence on unsupported location or device, you can use the following command:
+> [!TIP]`
 >
-> `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4`
->
-> For technical detail, see [Kyle-Ye/eligibility#3](https://github.com/Kyle-Ye/eligibility/pull/3)
+> For more technical detail, see [Kyle-Ye/eligibility](https://github.com/Kyle-Ye/eligibility)
 
-#### Method 2
 
-> [!NOTE]
-> There is known issue for method 2. See [#3](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/3) for more details.
->
-> If this is not work for you, please try method 1.
+### Method 2: override file
 
 No SIP disabled needed in total.
 
-1. Download `eligibility_overrides.data` file from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)
-2. Find the correct container path for `eligibilityd` under `~/Library/Daemon Containers/<UUID>`
-3. Move the downloaded file to `eligibilityd`'s daemon container's `Data/Library/Caches/NeverRestore/` folder. If you are not sure which one is for `eligibilityd`, you can try it one by one or just add the file to all of the containers.
+1. Download the corresponding `*.eligibility_overrides.data` file from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases) and rename it to `eligibility_overrides.data`
+
+> For Xcode LLM, download [xcodellm.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/xcodellm.eligibility_overrides.data)
+> 
+> For Apple Intelligence, download [greymatter.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/greymatter.eligibility_overrides.data)
+
+2. Find the correct container uuid for `eligibilityd` under `/private/var/root/Library/Daemon\ Containers`
+
+List all container uuid by the following command:
+```shell
+sudo ls /private/var/root/Library/Daemon\ Containers
+```
+
+3. Move downloaded file in the first step to the `Data/Library/Caches/NeverRestore/` folder of the corresponding Deamon container. If you are not sure which one is the correct container directory for eligibilityd, you can try it one by one or add the downloaded files to all Deamon containers.
+
+```shell
+sudo mkdir /private/var/root/Library/Daemon\ Containers/<UUID>/Data/Library/Caches/NeverRestore
+sudo cp eligibility_overrides.data /private/var/root/Library/Daemon\ Containers/<UUID>/Data/Library/Caches/NeverRestore/
+```
+
+4. Relaunch the `eligibilityd` service
+
+```shell
+sudo pkill -9 eligibilityd
+sudo launchctl kickstart -k system/com.apple.eligibilityd
+```
 
 ## Trouble Shooting
 
 > [!TIP]
 > The difference of eligibility_util and eligibility_util_sip is that the former is for SIP disabled environment and the latter is for SIP enabled environment.
 
-### Xcode LLM
+### Issue of Method 1: util tool 
+
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- doctor
+```
+
+### Issue of Method 2: override file
+
+If you are unable to access the Daemon Container related folders, please check if the terminal app you are using has full disk access permission.
+
+Path: Settings.app > Security & Privacy > Full Disk Access -> Add your terminal app to the list and enable it.
+
+### Other Xcode LLM related issue
 
 1. Confirom the override is working and you have the correct answer.
 
@@ -102,7 +158,7 @@ No SIP disabled needed in total.
 
 See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
-### Apple Intelligence
+### Other Apple Intelligence related issue
 
 > [!IMPORTANT]
 > Suggestions:

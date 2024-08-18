@@ -1,10 +1,14 @@
 ## <div align="center"><b><a href="README.md">English</a> | <a href="README_CN.md">简体中文</a></b></div>
 
-# 国行 Mac 使用 Xcode LLM的方法
+# Darwin Eligibility Override
 
-在不禁用系统完整性保护 (SIP) 的情况下在国行 Mac 上使用 Xcode LLM / Apple Intelligence 的方法。
+本项目旨在不禁用系统完整性保护 (SIP) 或者仅禁用一次的情况下
+实现永久在任意 Mac 上使用 Xcode LLM / Apple Intelligence。
 
-对于需要禁用系统完整性保护 (SIP) 的旧方法，请参阅 "相关链接" 部分。
+> [!NOTE]
+> Xcode LLM 仅支持在 macOS 15.0 Beta 及更高版本上使用。
+>
+> Apple Intelligence 仅支持在 macOS 15.1 Beta 及更高版本上使用。
 
 ![屏幕截图](images/XcodeLLM/screenshot.png)
 
@@ -19,43 +23,67 @@
 ## 使用方式
 
 > [!NOTE]
-> 仅在macOS 15 Beta 1 ~ Beta 3下测试了该脚本
+> 仅在macOS 15 Beta 1 ~ macOS 15.1 Beta 2 下测试了该脚本
 >
 > 只要苹果不删除或更改 eligibility 服务的 override 实现，预计可以在 macOS 15.x 的后续版本上工作
 
-### 脚本执行
-
-#### 安装
-
-XcodeLLM:
-
-```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash
-```
-
-Apple Intelligence:
-
-```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_apple_intelligence.sh | bash
-```
-
-#### 卸载
-
-XcodeLLM:
-
-```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override_xcodellm.sh | bash -s -- uninstall
-```
-
-### 手动执行
-
-#### 方案一（推荐）
+### 方案一 util 工具（推荐）
 
 在脚本执行期间需要临时禁用一次 SIP。
 
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util greymatter 
+```
+
+### 方案二 override 文件
+
+完全不需要禁用 SIP。
+
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override greymatter 
+```
+
+## 卸载
+
+### 方案一 util 工具
+
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util greymatter 
+```
+
+### 方案二 override 文件
+
+```shell
+# For XcodeLLM:
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override xcodellm
+# For Apple Intelligence
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override greymatter 
+```
+
+## 手动执行
+
+### 方案一 util 工具 （推荐）
+
 1. 在恢复模式下通过 `csrutil disable` 禁用 SIP
-2. 添加启动参数 `sudo nvram boot-args="amfi_get_out_of_my_way=1"`并重启
-3. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_util` 并执行 `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4`
+2. 添加启动参数 `sudo nvram boot-args="amfi_get_out_of_my_way=1"`并**重启**
+3. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载可执行文件 `eligibility_util` 并执行以下命令
+
+```shell
+# For XcodeLLM:
+./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
+# For Apple Intelligence
+./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4
+```
+
 4. 在恢复模式下通过 `csrutil enable` 恢复 SIP
 5. 删除启动参数 `sudo nvram -d boot-args`
 
@@ -66,31 +94,57 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 > 设置boot-args后，记得重新启动以使更改生效。
 
 > [!TIP]
-> 同样地，如果您想在不受支持的地区或设备上尝试 Apple Intelligence，你可以使用以下命令：
->
-> `./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4`
->
-> 有关技术细节，请参阅 [Kyle-Ye/eligibility#3](https://github.com/Kyle-Ye/eligibility/pull/3)
+> 更多技术细节，请参阅 [Kyle-Ye/eligibility](https://github.com/Kyle-Ye/eligibility)
 
-#### 方案二
-
-> [!NOTE]
-> 方案二存在已知问题。详见 #3。
->
-> 如果此方案对你不起作用，请尝试方案一。
+### 方案二 override 文件
 
 完全不需要禁用 SIP。
 
-1. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载 `eligibility_overrides.data` 文件
-2. 在`~/Library/Daemon Containers/<UUID>`下找到`eligibilityd`的正确容器路径
-3. 将下载的文件移动到相应的 Deamon 容器的 `Data/Library/Caches/NeverRestore/` 文件夹中。如果您不确定哪个是 eligibilityd 的容器目录，您可以一个一个地尝试，或者将下载的文件添加到所有 Deamon 容器中。
+1. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载需要的 `*.eligibility_overrides.data` 文件并重命名为 `eligibility_overrides.data`
+
+> 对于 Xcode LLM，下载 [xcodellm.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/xcodellm.eligibility_overrides.data)
+> 
+> 对于 Apple Intelligence，下载 [greymatter.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/greymatter.eligibility_overrides.data)
+
+2. 在 `/private/var/root/Library/Daemon\ Containers` 下找到 `eligibilityd` 的容器 UUID
+
+通过以下命令查看所有的 UUID
+```shell
+sudo ls /private/var/root/Library/Daemon\ Containers
+```
+
+3. 将第一步下载的文件移动到相应的 Deamon 容器的 `Data/Library/Caches/NeverRestore/` 文件夹中。如果您不确定哪个是 eligibilityd 的容器目录，您可以一个一个地尝试，或者将下载的文件添加到所有 Deamon 容器中。
+
+```shell
+sudo mkdir /private/var/root/Library/Daemon\ Containers/<UUID>/Data/Library/Caches/NeverRestore
+sudo cp eligibility_overrides.data /private/var/root/Library/Daemon\ Containers/<UUID>/Data/Library/Caches/NeverRestore/
+```
+
+4. 重启 eligitbilityd 服务
+
+```shell
+sudo pkill -9 eligibilityd
+sudo launchctl kickstart -k system/com.apple.eligibilityd
+```
 
 ## 故障排除
 
 > [!TIP]
 > eligibility_util 和 eligibility_util_sip 的区别在于，后者可以用于开启了SIP的环境（仅部分功能可用）。
 
-### Xcode LLM
+### 方案一 util 工具问题
+
+```shell
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- doctor
+```
+
+### 方案二 override 文件问题
+
+如果你无法访问 Daemon Container 相关文件夹，请检查你使用的终端App是否拥有完全磁盘访问权限。
+
+路径：设置 App -> 隐私和安全性 -> 完全磁盘访问权限 -> 添加你的终端App并允许访问。
+
+### 其他 Xcode LLM 相关问题
 
 1. 确认覆盖生效并且你有正确的 Answer。
 ```
@@ -101,7 +155,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/override
 
 See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
-### Apple Intelligence
+### 其他 Apple Intelligence 相关问题
 
 > [!IMPORTANT]
 > 建议：
