@@ -16,7 +16,7 @@ if [[ $# -gt 2 ]]; then
 fi
 
 UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.2.0/eligibility_util"
-UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/0.2.0/eligibility_util_sip"
+UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.2.0/eligibility_util_sip"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
 UTIL_SIP_FILE="${DOWNLOAD_DIR}/eligibility_util_sip"
