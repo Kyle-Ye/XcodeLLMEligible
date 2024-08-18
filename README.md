@@ -33,9 +33,9 @@ Need one time SIP disable during the script.
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install util xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install util greymatter 
 ```
 
 ### Method 2: override file
@@ -44,9 +44,9 @@ No SIP disabled needed in total.
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install override xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install override greymatter 
 ```
 
 ## Uninstall
@@ -55,18 +55,18 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall util xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall util greymatter 
 ```
 
 ### Method 2: override file
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall override xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall override greymatter 
 ```
 
 ## Manual Execution
@@ -137,7 +137,7 @@ sudo launchctl kickstart -k system/com.apple.eligibilityd
 ### Issue of Method 1: util tool 
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- doctor
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- doctor
 ```
 
 ### Issue of Method 2: override file

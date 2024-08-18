@@ -33,9 +33,9 @@
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install util xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install util greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install util greymatter 
 ```
 
 ### 方案二 override 文件
@@ -44,9 +44,9 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install override xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- install override greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- install override greymatter 
 ```
 
 ## 卸载
@@ -55,18 +55,18 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall util xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall util greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall util greymatter 
 ```
 
 ### 方案二 override 文件
 
 ```shell
 # For XcodeLLM:
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override xcodellm
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall override xcodellm
 # For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- uninstall override greymatter 
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- uninstall override greymatter 
 ```
 
 ## 手动执行
@@ -102,9 +102,9 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/
 
 1. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载需要的 `*.eligibility_overrides.data` 文件并重命名为 `eligibility_overrides.data`
 
-> 对于 Xcode LLM，下载 [xcodellm.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/xcodellm.eligibility_overrides.data)
+> 对于 Xcode LLM，下载 [xcodellm.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.2.0/xcodellm.eligibility_overrides.data)
 > 
-> 对于 Apple Intelligence，下载 [greymatter.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/greymatter.eligibility_overrides.data)
+> 对于 Apple Intelligence，下载 [greymatter.eligibility_overrides.data](https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.2.0/greymatter.eligibility_overrides.data)
 
 2. 在 `/private/var/root/Library/Daemon\ Containers` 下找到 `eligibilityd` 的容器 UUID
 
@@ -135,7 +135,7 @@ sudo launchctl kickstart -k system/com.apple.eligibilityd
 ### 方案一 util 工具问题
 
 ```shell
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/main/Scripts/override.sh | bash -s -- doctor
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/Scripts/override.sh | bash -s -- doctor
 ```
 
 ### 方案二 override 文件问题

@@ -15,13 +15,13 @@ if [[ $# -gt 2 ]]; then
   key="$3"
 fi
 
-UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util"
-UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/eligibility_util_sip"
+UTIL_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.2.0/eligibility_util"
+UTIL_SIP_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/0.2.0/eligibility_util_sip"
 DOWNLOAD_DIR="/tmp"
 UTIL_FILE="${DOWNLOAD_DIR}/eligibility_util"
 UTIL_SIP_FILE="${DOWNLOAD_DIR}/eligibility_util_sip"
 OVERRIDE_FILE="${DOWNLOAD_DIR}/eligibility_overrides.data"
-OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/latest/download/$key.eligibility_overrides.data"
+OVERRIDE_URL="https://github.com/Kyle-Ye/XcodeLLMEligible/releases/download/0.2.0/$key.eligibility_overrides.data"
 DAEMON_CONTAINERS_DIR=/private/var/root/Library/Daemon\ Containers
 
 show_usage() {
