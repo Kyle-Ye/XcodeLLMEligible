@@ -32,10 +32,12 @@ The author of this project is not responsible for any consequences that may aris
 Need one time SIP disable during the script.
 
 ```shell
-# For XcodeLLM:
+# Force XcodeLLM to be eligiable
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util xcodellm
-# For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter 
+# Force Apple Intelligence to be eligiable
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter
+# Or you can force all to be eligiable
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util all
 ```
 
 ### Method 2: override file
@@ -43,11 +45,22 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 No SIP disabled needed in total.
 
 ```shell
-# For XcodeLLM:
+# Override XcodeLLM only
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override xcodellm
-# For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter 
 ```
+
+```shell
+# Override Apple Intelligence only
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter
+```
+
+```shell
+# Override all elibility
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override all
+```
+
+> [!NOTE]
+> The override file method is mutually exclusive. If you want to override both, please use "all" as key / the 3rd command.
 
 ## Uninstall
 

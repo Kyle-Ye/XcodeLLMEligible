@@ -32,10 +32,12 @@
 在脚本执行期间需要临时禁用一次 SIP。
 
 ```shell
-# For XcodeLLM:
+# Force XcodeLLM to be eligiable
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util xcodellm
-# For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter 
+# Force Apple Intelligence to be eligiable
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter
+# Or you can force all to be eligiable
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util all
 ```
 
 ### 方案二 override 文件
@@ -43,11 +45,22 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 完全不需要禁用 SIP。
 
 ```shell
-# For XcodeLLM:
+# Override XcodeLLM only
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override xcodellm
-# For Apple Intelligence
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter 
 ```
+
+```shell
+# Override Apple Intelligence only
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter
+```
+
+```shell
+# Override all elibility
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override all
+```
+
+> [!NOTE]
+> override 文件方案是互斥的。如果两者都需要覆盖，请使用 all 作为 key / 第三条命令。
 
 ## 卸载
 
