@@ -165,7 +165,7 @@ method_override() {
     echo "[method_override] Copied to $dest_dir"
   done
 
-  echo ["method_override" killing eligibilityd...]
+  echo "[method_override] killing eligibilityd..."
   sudo pkill -9 eligibilityd
   sudo launchctl kickstart -k system/com.apple.eligibilityd
   download_file "$UTIL_SIP_URL" "$UTIL_SIP_FILE"
