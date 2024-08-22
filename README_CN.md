@@ -22,12 +22,10 @@
 
 ## 使用方式
 
-> [!NOTE]
-> 仅在macOS 15 Beta 1 ~ macOS 15.1 Beta 2 下测试了该脚本
->
-> 只要苹果不删除或更改 eligibility 服务的 override 实现，预计可以在 macOS 15.x 的后续版本上工作
-
 ### 方案一 util 工具（推荐）
+
+> [!NOTE]
+> 在 macOS 15 Beta 1 ~ macOS 15.1 Beta 2 上正常
 
 在脚本执行期间需要临时禁用一次 SIP。
 
@@ -41,6 +39,12 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ```
 
 ### 方案二 override 文件
+
+> [!NOTE]
+> 在 macOS 15 Beta 1 ~ Beta 6 以及 macOS 15.1 Beta1 ～ Beta 2 正常
+> macOS 15 Beta 7 上存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)
+>
+> 只要苹果不删除或更改 eligibility 服务的 override 实现，预计可以在 macOS 15.x 的后续版本上工作
 
 完全不需要禁用 SIP。
 

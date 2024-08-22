@@ -22,12 +22,10 @@ The author of this project is not responsible for any consequences that may aris
 
 ## Usage
 
-> [!NOTE]
-> Tested the script under macOS 15 Beta 1 ~ macOS 15.1 Beta 2
-> 
-> Should work on macOS 15.x release as long as Apple does not remove or change the override feature of eligibility service.
-
 ### Method 1: util tool (Recommended)
+
+> [!NOTE]
+> It works on macOS 15 Beta 1 ~ macOS 15.1 Beta 2.
 
 Need one time SIP disable during the script.
 
@@ -41,6 +39,13 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ```
 
 ### Method 2: override file
+
+> [!NOTE]
+> It works on macOS 15 Beta 1 ~ Beta 6 and macOS 15.1 Beta 1 ~ Beta 2.
+> 
+> There is a known issue on macOS 15 Beta 7 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)
+>
+> Should work on macOS 15.x release as long as Apple does not remove or change the override feature of eligibility service.
 
 No SIP disabled needed in total.
 
