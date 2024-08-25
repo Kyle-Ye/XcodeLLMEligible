@@ -25,9 +25,14 @@
 ### 方案一 util 工具（推荐）
 
 > [!NOTE]
-> 在 macOS 15 Beta 1 ~ macOS 15.1 Beta 2 上正常
+> 在 macOS 15 Beta 1 ~ Beta 6 以及 macOS 15.1 Beta1 ～ Beta 2 正常
+> 
+> macOS 15 Beta 7 上存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)。它需要你保持 SIP 禁用状态才能工作。
 
-在脚本执行期间需要临时禁用一次 SIP。
+在脚本执行期间需要临时禁用一次 SIP 并在启动参数中添加 "amfi_get_out_of_my_way=1"。
+
+> [!TIP]
+> 如果你在如何禁用 SIP 或设置启动参数方面遇到问题，请参阅[手动执行](#manual-execution)部分以了解更多详细信息。
 
 ```shell
 # Force XcodeLLM to be eligiable
@@ -42,7 +47,8 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 
 > [!NOTE]
 > 在 macOS 15 Beta 1 ~ Beta 6 以及 macOS 15.1 Beta1 ～ Beta 2 正常
-> macOS 15 Beta 7 上存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)
+> 
+> macOS 15 Beta 7 上存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)。它需要你保持 SIP 禁用状态才能工作。
 >
 > 只要苹果不删除或更改 eligibility 服务的 override 实现，预计可以在 macOS 15.x 的后续版本上工作
 

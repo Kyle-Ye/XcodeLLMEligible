@@ -25,9 +25,14 @@ The author of this project is not responsible for any consequences that may aris
 ### Method 1: util tool (Recommended)
 
 > [!NOTE]
-> It works on macOS 15 Beta 1 ~ macOS 15.1 Beta 2.
+> It works on macOS 15 Beta 1 ~ Beta 6 and macOS 15.1 Beta 1 ~ Beta 2.
+> 
+> There is a known issue on macOS 15 Beta 7 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22). It required you keeping SIP disabled to work.
 
-Need one time SIP disable during the script.
+Need one time SIP disable + "amfi_get_out_of_my_way=1" set boot-args in during the script.
+
+> [!TIP]
+> If you have issue on how to disable SIP or set boot-args, see [Manual Execution](#manual-execution) section for more detail.
 
 ```shell
 # Force XcodeLLM to be eligiable
@@ -43,8 +48,8 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 > [!NOTE]
 > It works on macOS 15 Beta 1 ~ Beta 6 and macOS 15.1 Beta 1 ~ Beta 2.
 > 
-> There is a known issue on macOS 15 Beta 7 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)
->
+> There is a known issue on macOS 15 Beta 7 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22). It required you keeping SIP disabled to work.
+> 
 > Should work on macOS 15.x release as long as Apple does not remove or change the override feature of eligibility service.
 
 No SIP disabled needed in total.
