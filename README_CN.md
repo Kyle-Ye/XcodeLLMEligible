@@ -6,9 +6,9 @@
 实现永久在任意 Mac 上使用 Xcode LLM / Apple Intelligence。
 
 > [!NOTE]
-> Xcode LLM 仅支持在 macOS 15.0 Beta 及更高版本上使用。
+> Xcode LLM 仅支持在 macOS 15.0 及更高版本上使用。
 >
-> Apple Intelligence 仅支持在 macOS 15.1 Beta 及更高版本上使用。
+> Apple Intelligence 仅支持在 macOS 15.1 及更高版本上使用。
 
 ![屏幕截图](images/XcodeLLM/screenshot.png)
 
@@ -23,11 +23,6 @@
 ## 使用方式
 
 ### 方案一 util 工具（推荐）
-
-> [!NOTE]
-> 在 macOS 15 Beta 1 ~ Beta 6 以及 macOS 15.1 Beta1 ～ Beta 2 正常
-> 
-> macOS 15 Beta 7 上存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)。它需要你保持 SIP 禁用状态才能工作。
 
 在脚本执行期间需要临时禁用一次 SIP 并在启动参数中添加 "amfi_get_out_of_my_way=1"。
 
@@ -44,13 +39,6 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ```
 
 ### 方案二 override 文件
-
-> [!NOTE]
-> 在 macOS 15 Beta 1 ~ Beta 6 以及 macOS 15.1 Beta1 ～ Beta 2 正常
-> 
-> macOS 15 Beta 7 上存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)。它需要你保持 SIP 禁用状态才能工作。
->
-> 只要苹果不删除或更改 eligibility 服务的 override 实现，预计可以在 macOS 15.x 的后续版本上工作
 
 完全不需要禁用 SIP。
 
