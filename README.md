@@ -91,8 +91,10 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ```shell
 # For XcodeLLM:
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
-# For Apple Intelligence
+# For Apple Intelligence (macOS 15.1+ required)
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4
+# For clean Up as part of Apple Intelligence feature (macOS 15.1 Beta 3+ required)
+./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM --answer 4
 ```
 
 4. Enable SIP in recovery mode with `csrutil enable` and reboot.
