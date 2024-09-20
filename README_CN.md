@@ -26,6 +26,11 @@
 
 在脚本执行期间需要临时禁用一次 SIP 并在启动参数中添加 "amfi_get_out_of_my_way=1"。
 
+> [!NOTE] 
+> macOS 15.1 Beta 4 上的 "all" 方法存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)。
+>
+> 临时方案: 使用 xcodellm 或 greymatter 代替。
+
 > [!TIP]
 > 如果你在如何禁用 SIP 或设置启动参数方面遇到问题，请参阅[手动执行](#manual-execution)部分以了解更多详细信息。
 

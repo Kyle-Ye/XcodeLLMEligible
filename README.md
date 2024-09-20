@@ -26,6 +26,11 @@ The author of this project is not responsible for any consequences that may aris
 
 Need one time SIP disable + "amfi_get_out_of_my_way=1" set boot-args in during the script.
 
+> [!NOTE] 
+> There is a known issue on macOS 15.1 Beta 4 for "all" command [#28](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/28).
+> 
+> Workaround: Use xcodellm or greymatter instead.
+
 > [!TIP]
 > If you have issue on how to disable SIP or set boot-args, see [Manual Execution](#manual-execution) section for more detail.
 
