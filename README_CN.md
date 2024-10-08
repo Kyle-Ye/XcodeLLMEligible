@@ -26,11 +26,6 @@
 
 在脚本执行期间需要临时禁用一次 SIP 并在启动参数中添加 "amfi_get_out_of_my_way=1"。
 
-> [!NOTE] 
-> macOS 15.1 Beta 4 上的 "all" 方法存在已知问题 [#22](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/22)。
->
-> 临时方案: 使用 xcodellm 或 greymatter 代替。
-
 > [!TIP]
 > 如果你在如何禁用 SIP 或设置启动参数方面遇到问题，请参阅[手动执行](#manual-execution)部分以了解更多详细信息。
 
@@ -39,8 +34,6 @@
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util xcodellm
 # Force Apple Intelligence to be eligiable
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter
-# Or you can force all to be eligiable
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util all
 ```
 
 ### 方案二 override 文件
@@ -52,12 +45,14 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override xcodellm
 # Override Apple Intelligence only
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter
-# Override all eligibility
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override all
 ```
 
 > [!NOTE]
-> override 文件方案是互斥的。如果两者都需要覆盖，请使用 all 作为 key。
+> override 文件方案是互斥的。
+>
+> 本仓库仅提供了单独了 Xcode LLM 和 Apple Intelligence 的 override 文件。
+>
+> 如果需要覆盖多个，请使用 util 工具方案分别覆盖后导出 override 文件供自己未来使用。
 
 ## 卸载
 
@@ -68,8 +63,6 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util xcodellm
 # For Apple Intelligence
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util greymatter
-# Uninstall all
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util all
 ```
 
 ### 方案二 override 文件
@@ -79,8 +72,6 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall override xcodellm
 # For Apple Intelligence
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall override greymatter
-# Uninstall all
-curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall override all
 ```
 
 ## 手动执行
