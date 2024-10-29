@@ -30,11 +30,11 @@ Need one time SIP disable + "amfi_get_out_of_my_way=1" set boot-args in during t
 > If you have issue on how to disable SIP or set boot-args, see [Manual Execution](#manual-execution) section for more detail.
 
 ```shell
-# Force XcodeLLM to be eligiable
+# Force XcodeLLM to be eligible
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util xcodellm
-# Force Apple Intelligence to be eligiable
+# Force Apple Intelligence to be eligible
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter
-# Force Cleanup to be eligiable
+# Force Cleanup to be eligible
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util strontium
 ```
 

@@ -30,11 +30,11 @@
 > 如果你在如何禁用 SIP 或设置启动参数方面遇到问题，请参阅[手动执行](#manual-execution)部分以了解更多详细信息。
 
 ```shell
-# Force XcodeLLM to be eligiable
+# Force XcodeLLM to be eligible
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util xcodellm
-# Force Apple Intelligence to be eligiable
+# Force Apple Intelligence to be eligible
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter
-# Force Cleanup to be eligiable
+# Force Cleanup to be eligible
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util strontium
 ```
 
