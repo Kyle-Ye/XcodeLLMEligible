@@ -68,6 +68,14 @@ method_util() {
       "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
       echo ""
       ;;
+    strontium)
+      echo "[method_util] Setting Apple Intelligence(Cleanup) to eligible..."
+      "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM --answer 4
+      echo "[method_util] Setting Complete..."
+      echo "[method_util] Checking the status..."
+      "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
+      echo ""
+      ;;
     *)
       echo "[method_util] Unknown key: $key"
       show_usage
@@ -101,6 +109,14 @@ method_util_uninstall() {
       echo "[method_util_uninstall] Resetting Complete..."
       echo "[method_util_uninstall] Checking the status..."
       "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
+      echo ""
+      ;;
+    strontium)
+      echo "[method_util_uninstall] Resetting Apple Intelligence(Cleanup)..."
+      "$UTIL_FILE" resetDomain --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
+      echo "[method_util_uninstall] Resetting Complete..."
+      echo "[method_util_uninstall] Checking the status..."
+      "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
       echo ""
       ;;
     *)
@@ -181,6 +197,9 @@ method_override() {
     greymatter)
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
       ;;
+    strontium)
+      "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
+      ;;
     *)
       echo "[method_override] Unknown key: $key"
       show_usage
@@ -220,6 +239,9 @@ method_override_uninstall() {
       ;;
     greymatter)
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
+      ;;
+    strontium)
+      "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
       ;;
     *)
       echo "[method_override_uninstall] Unknown key: $key"
