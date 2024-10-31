@@ -83,10 +83,21 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ### Method 1: util tool (Recommended)
 
 1. Disable SIP in recovery mode with `csrutil disable`
+
 2. Add boot argument by `sudo nvram boot-args="amfi_get_out_of_my_way=1"` and reboot
-3. Download `eligibility_util` from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases) and execute the following command
+
+3. Download `eligibility_util` from the [release page](https://github.com/Kyle-Ye/XcodeLLMEligible/releases) and add executable permission.
+
+> The following command example assumes the downloaded file is in the `~/Downloads` folder.
 
 ```shell
+chmod +x ~/Downloads/eligibility_util
+```
+
+4. Execute the following command
+
+```shell
+cd ~/Downloads
 # For XcodeLLM:
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
 # For Apple Intelligence (macOS 15.1+ required)
@@ -96,6 +107,7 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ```
 
 4. Enable SIP in recovery mode with `csrutil enable` and reboot.
+
 5. Remove boot argument by `sudo nvram -d boot-args`
 
 > Read [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) if you are unfamiliar with SIP operation.
@@ -140,12 +152,40 @@ sudo pkill -9 eligibilityd
 sudo launchctl kickstart -k system/com.apple.eligibilityd
 ```
 
-## Trouble Shooting
+## Trouble Shooting / FAQ
 
 > [!TIP]
 > The difference of eligibility_util and eligibility_util_sip is that the former is for SIP disabled environment and the latter is for SIP enabled environment.
 
 ### Issue of Method 1: util tool 
+
+1. If you see the following output
+
+```shell
+zsh: no such file or directory: ./eligibility_util
+```
+
+Please make sure the current working directory contains the `eligibility_util` file.
+
+2. If you see the following output
+
+```shell
+zsh: permission denied: ./eligibility_util
+```
+
+Please make sure you have added the executable permission to the `eligibility_util` file via `chmod +x ./eligibility_util`.(Check step 3 in [Manual Execution](#manual-execution))
+
+```shell
+
+3. If you see the following output
+
+```shell
+>[1]    61672 killed     ./eligibility_util
+```
+
+Please make sure you have disabled SIP and set the boot-args correctly. (Check step 1 and 2 in [Manual Execution](#manual-execution))
+
+4. Other issue
 
 ```shell
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- doctor

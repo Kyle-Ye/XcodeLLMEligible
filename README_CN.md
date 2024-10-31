@@ -83,10 +83,21 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 ### 方案一 util 工具 （推荐）
 
 1. 在恢复模式下通过 `csrutil disable` 禁用 SIP
+
 2. 添加启动参数 `sudo nvram boot-args="amfi_get_out_of_my_way=1"`并**重启**
-3. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载可执行文件 `eligibility_util` 并执行以下命令
+
+3. 从[发布页面](https://github.com/Kyle-Ye/XcodeLLMEligible/releases)下载可执行文件 `eligibility_util` 并添加执行权限。
+
+> 以下的命令假设下载的文件在 `~/Downloads` 文件夹。
 
 ```shell
+chmod +x ~/Downloads/eligibility_util
+```
+
+4. 执行以下命令
+
+```shell
+cd ~/Downloads
 # For XcodeLLM:
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
 # For Apple Intelligence (macOS 15.1+ required)
@@ -138,12 +149,38 @@ sudo pkill -9 eligibilityd
 sudo launchctl kickstart -k system/com.apple.eligibilityd
 ```
 
-## 故障排除
+## 故障排除 / FAQ
 
 > [!TIP]
 > eligibility_util 和 eligibility_util_sip 的区别在于，后者可以用于开启了SIP的环境（仅部分功能可用）。
 
 ### 方案一 util 工具问题
+
+1. 如果看到以下输出
+
+```shell
+zsh: no such file or directory: ./eligibility_util
+```
+
+请确保当前工作路径含有 `eligibility_util` 的文件。
+
+2. 如果看到以下输出
+
+```shell
+zsh permission denied: ./eligibility_util
+```
+
+请确保已添加了执行权限 `chmod +x ./eligibility_util`。(检查[手动执行](#手动执行)的第 3 步)
+
+3. 如果看到以下输出
+
+```shell
+>[1]    61672 killed     ./eligibility_util
+```
+
+请确保已禁用了 SIP 设置了正确的 boot-args 并已重启。(检查[手动执行](#手动执行)的第 1 步和第 2 步)
+
+4. 其他问题
 
 ```shell
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- doctor
