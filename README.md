@@ -183,8 +183,6 @@ zsh: permission denied: ./eligibility_util
 
 Please make sure you have added the executable permission to the `eligibility_util` file via `chmod +x ./eligibility_util`.(Check step 3 in [Manual Execution](#manual-execution))
 
-```shell
-
 3. If you see the following output
 
 ```shell
