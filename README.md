@@ -249,6 +249,14 @@ See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
 ![Step6](images/AppleIntelligence/Step6.png)
 
+### Other FAQ
+
+1. Will "Eligibility Overrid" still work after an OS update?
+
+Probably yes. Eligibility Override does not require you to execute the steps again after an OS update.
+
+But Apple may change the Eligibility mechanism in the future, so it is not guaranteed to work after an OS update. 
+
 ## Related links
 
 - https://github.com/Kyle-Ye/eligibility/

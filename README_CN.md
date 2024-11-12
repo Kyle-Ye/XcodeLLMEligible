@@ -245,6 +245,14 @@ See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
 ![Step6](images/AppleIntelligence/Step6.png)
 
+### 其他 FAQ
+
+1. 在系统更新之后这种方式还会生效吗？
+
+大概率会。Eligibility Override 不需要你在系统更新后再次执行一遍命名。
+
+但是 Apple 可能会在未来更改 eligibility 机制，所以不能保证在系统更新后仍然有效。
+
 ## 相关链接
 
 - https://github.com/Kyle-Ye/eligibility/
