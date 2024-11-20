@@ -160,7 +160,7 @@ sudo pkill -9 eligibilityd
 sudo launchctl kickstart -k system/com.apple.eligibilityd
 ```
 
-## Trouble Shooting / FAQ
+## Trouble Shooting
 
 > [!TIP]
 > The difference of eligibility_util and eligibility_util_sip is that the former is for SIP disabled environment and the latter is for SIP enabled environment.
@@ -249,13 +249,27 @@ See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
 ![Step6](images/AppleIntelligence/Step6.png)
 
-### Other FAQ
+## FAQ
 
-1. Will "Eligibility Overrid" still work after an OS update?
+1. Will "Eligibility Override" still work after an OS update?
 
 Probably yes. Eligibility Override does not require you to execute the steps again after an OS update.
 
-But Apple may change the Eligibility mechanism in the future, so it is not guaranteed to work after an OS update. 
+But Apple may change the Eligibility mechanism in the future, so it is not guaranteed to work after an OS update.
+
+2. Why is there no Apple Intelligence in the settings?
+
+Apple Intelligence is only available on macOS 15.1 and later.
+
+3. Why is there no ChatGPT related option in the settings?
+
+ChatGPT integration is only available on macOS 15.2 and later.
+
+4. Why does Siri still use Baidu's services after enabling Apple Intelligence (CN related)?
+
+Siri's search engine is determined by your region language settings and network environment. Please refer to other resources on the internet for appropriate network proxy configuration.
+
+eg. https://github.com/VirgilClyne/iRingo
 
 ## Related links
 

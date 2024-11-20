@@ -157,7 +157,7 @@ sudo pkill -9 eligibilityd
 sudo launchctl kickstart -k system/com.apple.eligibilityd
 ```
 
-## 故障排除 / FAQ
+## 故障排除
 
 > [!TIP]
 > eligibility_util 和 eligibility_util_sip 的区别在于，后者可以用于开启了SIP的环境（仅部分功能可用）。
@@ -245,13 +245,27 @@ See detail for [#4](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/4)
 
 ![Step6](images/AppleIntelligence/Step6.png)
 
-### 其他 FAQ
+## FAQ
 
 1. 在系统更新之后这种方式还会生效吗？
 
 大概率会。Eligibility Override 不需要你在系统更新后再次执行一遍命名。
 
 但是 Apple 可能会在未来更改 eligibility 机制，所以不能保证在系统更新后仍然有效。
+
+2. 为什么在设置里没有 Apple Intelligence？
+
+Apple Intelligence 只在 macOS 15.1 及更高版本上可用。
+
+3. 为什么在设置里没有 ChatGPT 相关?
+
+ChatGPT 集成只在 macOS 15.2 及更高版本上可用。
+
+4. 为什么开启 Apple Intelligence 后，Siri 仍然使用了百度的服务?
+
+Siri 的搜索引擎是由你的地区语言设置和网络环境决定的。请参考互联网上的其他资料选择合适的网络代理进行配置。
+
+eg. https://github.com/VirgilClyne/iRingo
 
 ## 相关链接
 
