@@ -291,6 +291,20 @@ csrutil enable
 
 > See [#62](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/62#issuecomment-2541993096).
 
+6. Why I can use ChatGPT in Apple Intelligence?
+
+It is probably caused by network issues. If you are in an unsupported area, please make sure that you use a global network proxy or other means to access the service.
+
+- For Shadowrocket, use the Global proxy mode.
+- For other proxy tools, please refer to its official documents.
+
+> [! NOTE]
+> It is not enough to proxy the network traffic of the Web alone. Please proxy at the OS or local network (router) level.
+>
+> You can verify it by directly launching your terminal and running `ping google.com` or `curl cip.cc` to check if your proxy is working or not. (Warning: `cip.cc` is a third-party service. Please use it at your own discretion.)
+>
+> See [#60](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/60#issuecomment-2541349746) for more details.
+
 ## Related links
 
 - https://github.com/Kyle-Ye/eligibility/

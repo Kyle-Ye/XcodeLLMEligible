@@ -287,6 +287,20 @@ csrutil enable
 
 > See [#62](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/62#issuecomment-2541993096).
 
+6. 为什么我的 Apple Intelligence 中无法使用 ChatGPT?
+
+大概率是网络原因导致，如果你处在不受支持的地区，请确保你使用了全局网络代理等方式来访问该服务。
+
+- 对于 Shadowrocket，开启全局代理即可。
+- 对于其他代理工具，请参考其官方文档。
+
+> [!NOTE]
+> 仅代理 Web 的网络流量是不够的，请在 OS 或者本地网络（路由器）层面进行代理。
+>
+> 可以通过直接启动终端并运行 `ping google.com` 或 `curl cip.cc` 来进行验证。（警告：`cip.cc`是第三方服务。请自行决定使用它。）
+>
+> See [#60](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/60#issuecomment-2541349746) for more details.
+
 ## 相关链接
 
 - https://github.com/Kyle-Ye/eligibility/
