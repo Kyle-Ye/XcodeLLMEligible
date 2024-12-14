@@ -9,6 +9,8 @@ without disabling System Integrity Protection (SIP) or only disabling it once.
 > Xcode LLM is only supported on macOS 15.0+
 >
 > Apple Intelligence is only supported on macOS 15.1+
+>
+> XcodeLLM, Apple Intelligence and ChatGPT integration have been tested normally on Mac mini (M4 Pro, 2024) + macOS 15.2.
 
 ![Screenshot](images/XcodeLLM/screenshot.png)
 
@@ -270,6 +272,24 @@ ChatGPT integration is only available on macOS 15.2 and later.
 Siri's search engine is determined by your region language settings and network environment. Please refer to other resources on the internet for appropriate network proxy configuration.
 
 eg. https://github.com/VirgilClyne/iRingo
+
+5. Apple Intelligence is stuck on downloading.
+
+Try disable and delete AssetsV2 folder after SIP disabled, then re-enable SIP.
+
+```shell
+# Disable SIP (Run on RecoveryOS mode)
+csrutil disable
+# Reboot into normal macOS
+# Turn off Apple Intelligence in settings
+# Run on normal macOS
+sudo rm -rf /System/Library/AssetsV2
+# Enable SIP (Run on RecoveryOS mode)
+csrutil enable
+# Turn on Apple Intelligence in settings
+```
+
+> See [#62](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/62#issuecomment-2541993096).
 
 ## Related links
 

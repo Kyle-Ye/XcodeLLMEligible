@@ -9,6 +9,8 @@
 > Xcode LLM 仅支持在 macOS 15.0 及更高版本上使用。
 >
 > Apple Intelligence 仅支持在 macOS 15.1 及更高版本上使用。
+>
+> XcodeLLM, Apple Intelligence 和 ChatGPT 集成已在 Mac mini (M4 Pro, 2024) + macOS 15.2 上测试正常。
 
 ![屏幕截图](images/XcodeLLM/screenshot.png)
 
@@ -266,6 +268,24 @@ ChatGPT 集成只在 macOS 15.2 及更高版本上可用。
 Siri 的搜索引擎是由你的地区语言设置和网络环境决定的。请参考互联网上的其他资料选择合适的网络代理进行配置。
 
 eg. https://github.com/VirgilClyne/iRingo
+
+5. 为什么我的 Apple Intelligence 一直卡在下载 100%?
+
+可以尝试关闭 SIP 后删除 AssetsV2 文件夹，然后重新启用 SIP。
+
+```shell
+# 关闭SIP (恢复 OS 模式下执行)
+csrutil disable
+# 重启进入到普通 macOS
+# 设置中关闭 Apple Intelligence
+# 普通 macOS 的终端中执行
+sudo rm -rf /System/Library/AssetsV2
+# 开启 SIP (恢复 OS 模式下执行)
+csrutil enable
+# 设置中开启 Apple Intelligence
+```
+
+> See [#62](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/62#issuecomment-2541993096).
 
 ## 相关链接
 
