@@ -276,12 +276,14 @@ eg. https://github.com/VirgilClyne/iRingo
 ```shell
 # 关闭SIP (恢复 OS 模式下执行)
 csrutil disable
+csrutil authenticated-root disable
 # 重启进入到普通 macOS
 # 设置中关闭 Apple Intelligence
 # 普通 macOS 的终端中执行
-sudo rm -rf /System/Library/AssetsV2
+sudo rm -rf /System/Library/AssetsV2/*
 # 开启 SIP (恢复 OS 模式下执行)
 csrutil enable
+csrutil authenticated-root enable
 # 设置中开启 Apple Intelligence
 ```
 

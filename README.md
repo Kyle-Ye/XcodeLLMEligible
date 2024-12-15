@@ -280,13 +280,15 @@ Try disable and delete AssetsV2 folder after SIP disabled, then re-enable SIP.
 ```shell
 # Disable SIP (Run on RecoveryOS mode)
 csrutil disable
+csrutil authenticated-root disable
 # Reboot into normal macOS
 # Turn off Apple Intelligence in settings
 # Run on normal macOS
-sudo rm -rf /System/Library/AssetsV2
+sudo rm -rf /System/Library/AssetsV2/*
 # Enable SIP (Run on RecoveryOS mode)
 csrutil enable
-# Turn on Apple Intelligence in settings
+csrutil authenticated-root enable
+# Turn on Apple Intelligence in settings to download it again (com.apple.MobileAsset.UAF.FM.GenerativeModels)
 ```
 
 > See [#62](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/62#issuecomment-2541993096).
@@ -298,7 +300,7 @@ It is probably caused by network issues. If you are in an unsupported area, plea
 - For Shadowrocket, use the Global proxy mode.
 - For other proxy tools, please refer to its official documents.
 
-> [! NOTE]
+> [!NOTE]
 > It is not enough to proxy the network traffic of the Web alone. Please proxy at the OS or local network (router) level.
 >
 > You can verify it by directly launching your terminal and running `ping google.com` or `curl cip.cc` to check if your proxy is working or not. (Warning: `cip.cc` is a third-party service. Please use it at your own discretion.)
