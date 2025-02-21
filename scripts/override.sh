@@ -76,6 +76,14 @@ method_util() {
       "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
       echo ""
       ;;
+    iron)
+      echo "[method_util] Setting iPhone Mirroring to eligible..."
+      "$UTIL_FILE" forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_IRON --answer 4
+      echo "[method_util] Setting Complete..."
+      echo "[method_util] Checking the status..."
+      "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_IRON
+      echo ""
+      ;;
     *)
       echo "[method_util] Unknown key: $key"
       show_usage
@@ -117,6 +125,14 @@ method_util_uninstall() {
       echo "[method_util_uninstall] Resetting Complete..."
       echo "[method_util_uninstall] Checking the status..."
       "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
+      echo ""
+      ;;
+    iron)
+      echo "[method_util_uninstall] Resetting iPhone Mirroring..."
+      "$UTIL_FILE" resetDomain --domain-name OS_ELIGIBILITY_DOMAIN_IRON
+      echo "[method_util_uninstall] Resetting Complete..."
+      echo "[method_util_uninstall] Checking the status..."
+      "$UTIL_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_IRON
       echo ""
       ;;
     *)
@@ -209,6 +225,9 @@ method_override() {
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
       ;;
+    iron)
+      "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_IRON
+      ;;
     *)
       echo "[method_override] Unknown key: $key"
       show_usage
@@ -260,6 +279,9 @@ method_override_uninstall() {
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER
       "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM
+      ;;
+    iron)
+      "$UTIL_SIP_FILE" getDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_IRON
       ;;
     *)
       echo "[method_override_uninstall] Unknown key: $key"

@@ -2,7 +2,7 @@
 
 # Darwin Eligibility Override
 
-This project aims to achieve permanent use of Xcode LLM/Apple Intelligence on any Mac
+This project aims to achieve permanent use of Xcode LLM / Apple Intelligence / iPhone Mirroring on any Mac
 without disabling System Integrity Protection (SIP) or only disabling it once.
 
 > [!NOTE]
@@ -32,12 +32,14 @@ Need one time SIP disable + "amfi_get_out_of_my_way=1" set boot-args in during t
 > If you have issue on how to disable SIP or set boot-args, see [Manual Execution](#manual-execution) section for more detail.
 
 ```shell
-# Force XcodeLLM to be eligible
+# For XcodeLLM 
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util xcodellm
-# Force Apple Intelligence to be eligible
+# For Apple Intelligence
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util greymatter
-# Force Cleanup to be eligible
+# For Cleanup
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util strontium
+# For iPhone Mirroring
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install util iron
 ```
 
 ### Method 2: override file
@@ -45,14 +47,16 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 Do not require disable SIP at all.
 
 ```shell
-# Override XcodeLLM only
+# For XcodeLLM
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override xcodellm
-# Override Apple Intelligence only
+# For Apple Intelligence
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter
 # For Apple Intelligence + Cleanup
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override greymatter+strontium
 # For XcodeLLM + Apple Intelligence + Cleanup
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override xcodellm+greymatter+strontium
+# For iPhone Mirroring
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- install override iron
 ```
 
 > [!NOTE]
@@ -71,8 +75,10 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util xcodellm
 # For Apple Intelligence
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util greymatter
-# For Clenaup as part of Apple Intelligence feature
+# For Clenaup
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util strontium
+# For iPhone Mirroring
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall util iron
 ```
 
 ### Method 2: override file
@@ -86,6 +92,8 @@ curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/s
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall override greymatter+strontium
 # For XcodeLLM + Apple Intelligence + Cleanup
 curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall override xcodellm+greymatter+strontium
+# For iPhone Mirroring
+curl -L https://raw.githubusercontent.com/Kyle-Ye/XcodeLLMEligible/release/0.2/scripts/override.sh | bash -s -- uninstall override iron
 ```
 
 ## Manual Execution
@@ -108,12 +116,14 @@ chmod +x ~/Downloads/eligibility_util
 
 ```shell
 cd ~/Downloads
-# For XcodeLLM:
+# For XcodeLLM (macOS 15.0+ required)
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_XCODE_LLM --answer 4
 # For Apple Intelligence (macOS 15.1+ required)
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_GREYMATTER --answer 4
-# For Cleanup as part of Apple Intelligence feature (macOS 15.1 Beta 3+ required)
+# For Cleanup (macOS 15.1 Beta 3+ required)
 ./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_STRONTIUM --answer 4
+# For iPhone Mirroring (macOS 15.0+ required)
+./eligibility_util forceDomainAnswer --domain-name OS_ELIGIBILITY_DOMAIN_IRON --answer 4
 ```
 
 4. Enable SIP in recovery mode with `csrutil enable` and reboot.
