@@ -2,6 +2,15 @@
 
 # Darwin Eligibility Override
 
+> [!WARNING]
+> 如果你希望继续使用这个仓库，请不要更新到 macOS 15.4 Beta 1 或更高版本。
+>
+> Apple 更新了 eligibilityd 实现导致本仓库使用的覆盖文件方案会不再可用。
+>
+> 详细信息请参见 [#73](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/73#issuecomment-2676062451)
+>
+> 该仓库仅支持 macOS 15.0 - 15.3.1 版本。
+
 本项目旨在不禁用系统完整性保护 (SIP) 或者仅禁用一次的情况下
 实现永久在任意 Mac 上使用 Xcode LLM / Apple Intelligence / iPhone 镜像功能。
 

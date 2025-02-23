@@ -2,6 +2,15 @@
 
 # Darwin Eligibility Override
 
+> [!WARNING]
+> If you want to continue using this repository, please do not update to macOS 15.4 Beta 1 or later versions.
+>
+> Apple has updated the implementation of eligibilityd, which causes the override file solution used by this repository to become unavailable.
+>
+> For more details, see [#73](https://github.com/Kyle-Ye/XcodeLLMEligible/issues/73#issuecomment-2676062451)
+>
+> This repository only supports macOS 15.0 - 15.3.1.
+
 This project aims to achieve permanent use of Xcode LLM / Apple Intelligence / iPhone Mirroring on any Mac
 without disabling System Integrity Protection (SIP) or only disabling it once.
 
